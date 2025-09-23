@@ -1,11 +1,10 @@
 import { PiCrosshairSimple } from "react-icons/pi";
-import { Link } from 'react-router-dom'
 
-function cryptoExchange() {
+function cryptoExchange({ handleCryptoContainer }) {
     return (
         <>
            
-           <div className='crypto-exchange'>
+           <div className='crypto-exchange' onClick={()=>handleCryptoContainer()}>
                 <PiCrosshairSimple className='crypto-icon' />
                 <h3>Crypto Exchange</h3>
             </div>

@@ -14,9 +14,10 @@ import PaymentLinks from './activities/paymentLinks';
 import Disputes from './others/disputes';
 import Profile from './others/profile';
 import Verification from './others/verification';
-import Header from './header/headerContainer';
+import WithdrawalContainer from './activities/withdrawalContainer';
+import CryptoContainer from './activities/cryptoContainer';
 
-function SideBar(){
+function SideBar({ withdrawal,handleWithdrawal,crypto,handleCryptoContainer }){
     return(
         <>
           <div className='dashboard-container'>
@@ -30,15 +31,17 @@ function SideBar(){
         <SendMoney />
         <RequestMoney />
         <ExchangeMoney />
-        <div className='drop'> <Withdrawal /><IoIosArrowDown style={{position:'relative', left:'105px', top:'5px'}} onClick={(e)=>''}/></div>
-        <div className='drop1'> <CryptoExchange /><IoIosArrowDown style={{position:'relative', left:'70px', top:'5px'}} onClick={(e)=>''}/></div>
+        <div className='drop'> <Withdrawal handleWithdrawal={handleWithdrawal}/><IoIosArrowDown style={{position:'relative', left:'105px', top:'5px'}} onClick={()=>handleWithdrawal()}/></div>
+        <WithdrawalContainer withdrawal={withdrawal}/>
+        <div className='drop1' > <CryptoExchange handleCryptoContainer={handleCryptoContainer}/><IoIosArrowDown style={{position:'relative', left:'70px', top:'5px'}} onClick={()=>handleCryptoContainer()}/></div>
+        <CryptoContainer crypto={crypto}/>
         <PaymentLinks />
         <Disputes />
         <Profile />
         <Verification />
         
        </div>
-       <Header />
+      
         </>
       
     )

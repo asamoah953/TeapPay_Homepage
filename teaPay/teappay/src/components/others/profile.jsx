@@ -1,4 +1,4 @@
-import { RxAvatar } from "react-icons/rx";
+import { FiUser } from "react-icons/fi";
 
 
 
@@ -8,7 +8,7 @@ function Profile() {
        
            
             <div className='profile'>
-                <RxAvatar className='profile-icon' />
+                <FiUser className='profile-icon' />
                 <h3>Profile</h3>
             </div>
         

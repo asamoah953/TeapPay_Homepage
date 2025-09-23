@@ -65,10 +65,11 @@ body {
     display: flex;
     align-items: center;
     gap: 34px;
-    margin-left: 20px;
+    margin-left: 18px;
     margin-top: 40px;
+    margin-bottom: -6px;
     font-size: 13px;
-    padding: 10px;
+    padding: 1px;
     cursor: pointer;
 
 }
@@ -81,7 +82,7 @@ body {
 .wallet-icon {
     font-size: 30px;
     color: #333;
-    margin-left: 20px;
+    margin-left: 18px;
     margin-right: 9.8px;
     color: white;
 }
@@ -90,9 +91,8 @@ body {
     display: flex;
     align-items: center;
     gap: 25px;
-    margin-top: 0px;
     font-size: 10px;
-    padding: 10px;
+    padding: 1px;
     cursor: pointer;
 
 
@@ -268,6 +268,7 @@ body {
     align-items: center;
     margin-right: 10px;
     position: relative;
+    cursor: pointer;
 }
 
 .crypto-exchange {
@@ -302,6 +303,7 @@ body {
     display: inline-flex;
     align-items: center;
     margin-right: 20px;
+    cursor: pointer;
 }
 
 .others {
@@ -390,4 +392,374 @@ a,
     justify-content: space-between;
     padding: 0 20px;
     box-sizing: border-box;
+}
+
+.profile-container {
+    width: 200px;
+    height: 40px;
+    position: absolute;
+    left: 1350px;
+    cursor: pointer;
+}
+
+.image {
+    font-size: 38px;
+    position: relative;
+    bottom: 6px;
+    background-color: rgb(18, 178, 166);
+    border-radius: 15px;
+}
+
+.name {
+    font-size: 15px;
+    color: black;
+    position: relative;
+    bottom: 18px;
+    left: 19px;
+    margin-right: 10px;
+}
+
+.dropdown {
+    color: #333;
+    position: relative;
+    bottom: 15px;
+    left: 37px;
+}
+
+.profile-container .image,
+.profile-container .name,
+.profile-container .dropdown {
+    display: inline-block;
+}
+
+.dropMenu {
+    width: 330px;
+    height: 340px;
+    position: absolute;
+    right: 30px;
+    top: 81px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 1000;
+
+}
+
+
+/* toggling switch */
+.toggle-container {
+    display: inline-block;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    left: 1200px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(255, 175, 48);
+    transition: 0.4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: rgb(99, 91, 254)
+}
+
+input:checked+.slider:before {
+    transform: translateX(20px);
+}
+
+.icon {
+    font-size: 20px;
+    color: #666;
+
+}
+
+
+/* default (light mode) */
+body[data-theme='light'] {
+    background-color: #ffffff;
+}
+
+/* dark mode */
+body[data-theme='dark'] {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+
+/* all about the dropdown menu */
+.profile2-container {
+    border-bottom: 1px solid black;
+    padding: 10px;
+    vertical-align: top;
+    text-align: center;
+    width: 100%;
+    height: 80px;
+    background-color: rgb(46, 36, 70);
+
+}
+
+
+.image2 {
+    margin: 0 auto;
+    position: relative;
+    right: 80px;
+    top: 9px;
+    font-size: 44px;
+    background-color: rgb(18, 178, 166);
+    border-radius: 19px;
+}
+
+.username {
+    display: inline-block;
+    margin: 5px 0;
+    position: relative;
+    color: #121212;
+    right: 54px;
+    font-size: 14px;
+    top: -14px;
+    color: white;
+}
+
+.email {
+    display: block;
+    margin-top: 5px;
+    color: #121212;
+    font-size: 14px;
+    position: relative;
+    top: -24px;
+    left: -13px;
+    color: white;
+}
+
+
+.viewprofile-container {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: 30px;
+    color: #121212;
+    position: relative;
+    top: 18px;
+    cursor: pointer;
+}
+
+.viewprofile-icon {
+    font-size: 20px;
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    left: 22px;
+}
+
+.view {
+    display: inline-block;
+    position: inherit;
+    left: 60px;
+    font-size: 13px;
+    top: 2px;
+}
+
+
+.checkwallet-container {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: 30px;
+    color: #121212;
+    position: relative;
+    top: 22px;
+    cursor: pointer;
+}
+
+.checkwallet-icon {
+    font-size: 20px;
+    display: inline-block;
+    position: relative;
+    top: 13px;
+    left: 22px;
+}
+
+.checkwallet {
+    display: inline-block;
+    position: inherit;
+    left: 60px;
+    font-size: 13px;
+    top: 9px;
+}
+
+.verification-container {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: 30px;
+    color: #121212;
+    position: relative;
+    top: 29px;
+    cursor: pointer;
+}
+
+.verification-icon {
+    font-size: 20px;
+    display: inline-block;
+    position: relative;
+    top: 13px;
+    left: 22px;
+}
+
+.verification {
+    display: inline-block;
+    position: inherit;
+    left: 60px;
+    font-size: 13px;
+    top: 9px;
+}
+
+.share-container {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: 30px;
+    color: #121212;
+    position: relative;
+    top: 39px;
+    cursor: pointer;
+}
+
+.share-icon {
+    font-size: 20px;
+    display: inline-block;
+    position: relative;
+    top: 13px;
+    left: 22px;
+}
+
+.share {
+    display: inline-block;
+    position: inherit;
+    left: 60px;
+    font-size: 13px;
+    top: 9px;
+}
+
+.line {
+    position: relative;
+    bottom: -60px;
+    color: rgb(228, 224, 224);
+}
+
+.logout-container {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: 30px;
+    color: #121212;
+    position: relative;
+    top: 70px;
+    cursor: pointer;
+}
+
+.logout-icon {
+    font-size: 20px;
+    display: inline-block;
+    position: relative;
+    top: 17px;
+    left: 22px;
+}
+
+.logout {
+    display: inline-block;
+    position: inherit;
+    left: 60px;
+    font-size: 13px;
+    top: 9px;
+}
+
+.withdrawalcontainer {
+    font-size: 13px;
+    width: 200px;
+    height: 100px;
+    display: block;
+
+}
+
+.withdrawmoney {
+    position: relative;
+    top: -10px;
+    left: 92px;
+}
+
+.withdrawlist {
+    position: relative;
+    left: 92px;
+    top: 10px;
+}
+
+.withdrawsettings {
+    position: relative;
+    left: 92px;
+    top: 30px;
+    margin-bottom: 12px;
+}
+
+
+.cryptocontainer {
+    font-size: 13px;
+    width: 200px;
+    height: 100px;
+    display: block;
+}
+
+.crypto {
+    position: relative;
+    top: -10px;
+    left: 92px;
+}
+
+.cryptolist {
+    position: relative;
+    left: 92px;
+    top: 10px;
 }
