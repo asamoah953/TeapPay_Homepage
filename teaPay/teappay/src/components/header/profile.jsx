@@ -9,7 +9,7 @@ function Profile({ handleDropDown}){
 
         <div className="profile-container" onClick={()=>handleDropDown()}>
 
-            <FcBusinesswoman className="image"/>
+            <img src="https://demo.paymoney.techvill.net/public/uploads/user-profile/1532333460.png" alt="Profile"  className="image"></img>
             <h3 className="name">Kyla Sarah</h3>
             <SlArrowDown className="dropdown"/>
 
@@ -19,3 +19,4 @@ function Profile({ handleDropDown}){
 }
 
 export default Profile;
+
