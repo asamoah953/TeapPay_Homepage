@@ -14,6 +14,14 @@ import Card from "./components/body/cardInfo";
 import CardDetail from "./components/body/cardDetails";
 import CardDetailTwo from "./components/body/cardDetailTwo";
 import QRCode from "./components/body/qrCode";
+import ActivitiesContainer from "./components/body/activitiesContainer";
+import { MdOutlineArrowForwardIos } from "react-icons/md";
+import { MdArrowDropUp } from "react-icons/md";
+import { IoMdArrowDropdown } from "react-icons/io";
+import Footer from "./components/body/footer";
+
+
+
 
 
 
@@ -27,7 +35,7 @@ function App() {
   const [crypto, setCrypto] = useState(false);
 
 
-  function handleCryptoContainer(){
+  function handleCryptoContainer() {
     setCrypto(prev => !prev)
   }
 
@@ -42,31 +50,50 @@ function App() {
   }
 
   const coinInfoObject = [
-    {coin:"BTC", name:"Crypto Asset",amount:0, logo:<FaBitcoin className="BTC"/>, key:1},
-    {coin:"TRXTEST", name:"Crypto Asset",amount:0, logo:<img src="https://demo.paymoney.techvill.net/public/uploads/currency_logos/tron.png" alt="Currency" className="BTCD"></img>,key:2},
-    {coin:"LTCTEST", name:"Crypto Asset",amount:0.00228403, logo:<SiLitecoin className="BTC" style={{color:"gray"}}/>,key:3},
-    {coin:"DOGETEST", name:"Crypto Asset",amount:4.74192582, logo:<img src="https://demo.paymoney.techvill.net/public/uploads/currency_logos/1671523566.png" alt="Currency" className="BTCD"></img>,key:4},
-    {coin:"USDT", name:"Crypto",amount:111.0302, logo:<img src="https://demo.paymoney.techvill.net/public/uploads/currency_logos/tether.png" alt="Currency" className="BTCD"/>,key:5},
-    {coin:"EUR", name:"fiat",amount:0, logo:<AiFillEuroCircle className="BTC" style={{color:'#0066AA'}}/>,key:6},
-    {coin:"GBP", name:"fiat",amount:19847, logo:<FaPoundSign className="BTC"  style={{color:"gray", backgroundColor:"#4153B5", borderRadius:"20px", fontSize:"37", padding:"4px", color:"white"}}/>,key:7},
-    {coin:"USD", name:"fiat",amount:49944.53, logo:<img src="https://demo.paymoney.techvill.net/public/uploads/currency_logos/icons8-us-dollar-64.png" alt="Currency" className="BTCD"></img>,key:8},
+    { coin: "BTC", name: "Crypto Asset", amount: 0, logo: <FaBitcoin className="BTC" />, key: 1 },
+    { coin: "TRXTEST", name: "Crypto Asset", amount: 0, logo: <img src="https://demo.paymoney.techvill.net/public/uploads/currency_logos/tron.png" alt="Currency" className="BTCD"></img>, key: 2 },
+    { coin: "LTCTEST", name: "Crypto Asset", amount: 0.00228403, logo: <SiLitecoin className="BTC" style={{ color: "gray" }} />, key: 3 },
+    { coin: "DOGETEST", name: "Crypto Asset", amount: 4.74192582, logo: <img src="https://demo.paymoney.techvill.net/public/uploads/currency_logos/1671523566.png" alt="Currency" className="BTCD"></img>, key: 4 },
+    { coin: "USDT", name: "Crypto", amount: 111.0302, logo: <img src="https://demo.paymoney.techvill.net/public/uploads/currency_logos/tether.png" alt="Currency" className="BTCD" />, key: 5 },
+    { coin: "EUR", name: "fiat", amount: 0, logo: <AiFillEuroCircle className="BTC" style={{ color: '#0066AA' }} />, key: 6 },
+    { coin: "GBP", name: "fiat", amount: 19847, logo: <FaPoundSign className="BTC" style={{ color: "gray", backgroundColor: "#4153B5", borderRadius: "20px", fontSize: "37", padding: "4px", color: "white" }} />, key: 7 },
+    { coin: "USD", name: "fiat", amount: 49944.53, logo: <img src="https://demo.paymoney.techvill.net/public/uploads/currency_logos/icons8-us-dollar-64.png" alt="Currency" className="BTCD"></img>, key: 8 },
 
+  ]
+
+  const useractivity = [
+    { activity: "Exchange To", wallet: "GBP", date: "26-09-2025", time: "2:59 PM", amount: "$ 75", status: "Success", arrow: <MdOutlineArrowForwardIos />, updownarrow: <IoMdArrowDropdown style={{ color: "green" }} />, key: 1, profile: <img src="https://demo.paymoney.techvill.net/public/uploads/currency_logos/icons8-british-pound-64.png" alt="Transaction" className="activity-profile1" ></img> },
+    { activity: "Exchange From", wallet: "USD ", date: "26-09-2025", time: "2:59 PM", amount: "$ 75", status: "Success", arrow: <MdOutlineArrowForwardIos />, updownarrow: <MdArrowDropUp style={{ color: "red" }} />, key: 1, profile: <img src="https://demo.paymoney.techvill.net/public/uploads/currency_logos/icons8-us-dollar-64.png" alt="Transaction" className="activity-profile1"></img> },
+    { activity: "Virtualcard Withdrawal", wallet: "USD Wallet", date: "11-09-2025", time: "2:59 PM", amount: "$ 75", status: "Success", arrow: <MdOutlineArrowForwardIos />, updownarrow: <MdArrowDropUp style={{ color: "red" }} />, key: 1, profile: <img src="https://demo.paymoney.techvill.net/Modules/Virtualcard/Resources/assets/images/virtualcard-withdrawal.jpg" alt="Transaction" className="activity-profile1"></img> },
+    { activity: "Virtualcard Withdrawal", wallet: "USD Wallet", date: "11-09-2025", time: "2:59 PM", amount: "$ 75", status: "pending", arrow: <MdOutlineArrowForwardIos />, updownarrow: <MdArrowDropUp style={{ color: "red" }} />, key: 1, profile: <img src="https://demo.paymoney.techvill.net/Modules/Virtualcard/Resources/assets/images/virtualcard-withdrawal.jpg" alt="Transaction" className="activity-profile1"></img> },
+    { activity: "Virtualcard Topup", wallet: "USD Wallet", date: "11-09-2025", time: "2:59 PM", amount: "$ 75", status: "Success", arrow: <MdOutlineArrowForwardIos />, updownarrow: <IoMdArrowDropdown style={{ color: "green" }} />, key: 1, profile: <img src="https://demo.paymoney.techvill.net/Modules/Virtualcard/Resources/assets/images/virtualcard-topup.jpg" alt="Transaction" className="activity-profile1"></img> },
+    { activity: "Token Received", wallet: "Irish Watson", date: "11-09-2025", time: "2:59 PM", amount: "$ 75", status: "Success", arrow: <MdOutlineArrowForwardIos />, updownarrow: <MdArrowDropUp style={{ color: "red" }} />, key: 1, profile: <img src="https://demo.paymoney.techvill.net/public/uploads/user-profile/1532005837.jpg" alt="Transaction" className="activity-profile1"></img> },
+    { activity: "Crypto sent", wallet: "Tatumlo", date: "11-09-2025", time: "2:59 PM", amount: "$ 75", status: "Success", arrow: <MdOutlineArrowForwardIos />, updownarrow: <MdArrowDropUp style={{ color: "red" }} />, key: 1, profile: <img src="https://demo.paymoney.techvill.net/public/uploads/user-profile/1532005837.jpg" alt="Transaction" className="activity-profile1"></img> },
+    { activity: "Crypto Received", wallet: "unregistered", date: "11-09-2025", time: "2:59 PM", amount: "$ 75", status: "Success", arrow: <MdOutlineArrowForwardIos />, updownarrow: <IoMdArrowDropdown style={{ color: "green" }} />, key: 1, profile: <img src="https://demo.paymoney.techvill.net/public/dist/images/default-avatar.png" alt="Transaction" className="activity-profile1"></img> },
+    { activity: "Crypto Received", wallet: "Irish Watson", date: "11-09-2025", time: "2:59 PM", amount: "$ 75", status: "Success", arrow: <MdOutlineArrowForwardIos />, updownarrow: <IoMdArrowDropdown style={{ color: "green" }} />, key: 1, profile: <img src="https://demo.paymoney.techvill.net/public/uploads/user-profile/1532005837.jpg" alt="Transaction" className="activity-profile1"></img> },
+    { activity: "Payment Received", wallet: "GBC", date: "11-09-2025", time: "2:59 PM", amount: "$ 75", status: "Success", arrow: <MdOutlineArrowForwardIos />, updownarrow: <IoMdArrowDropdown style={{ color: "green" }} />, key: 1, profile: <img src="https://demo.paymoney.techvill.net/public/uploads/currency_logos/icons8-british-pound-64.png" alt="Transaction" className="activity-profile1" ></img> }
   ]
 
   return (
     <>
-      <SideBar path={'#'} withdrawal={withdrawal} handleWithdrawal={handleWithdrawal} crypto={crypto} handleCryptoContainer={handleCryptoContainer}/>
+      <SideBar path={'#'} withdrawal={withdrawal} handleWithdrawal={handleWithdrawal} crypto={crypto} handleCryptoContainer={handleCryptoContainer} />
       <Header handleDropDown={handleDropDown} />
       <DropMenu dropMenu={dropMenu} />
-      <BodyProfile />
-      <DepositButton />
-      <WithdrawButton />
-      <CoinContainer coinInfoObject={coinInfoObject}/>
-      <AllWallet />
-      <Card />
-      <CardDetail />
-      <CardDetailTwo />
-      <QRCode />
+      <div className="container">
+        <div className="content">
+          <BodyProfile />
+          <DepositButton />
+          <WithdrawButton />
+          <CoinContainer coinInfoObject={coinInfoObject} />
+          <AllWallet />
+          <Card />
+          <CardDetail />
+          <CardDetailTwo />
+          <QRCode />
+          <ActivitiesContainer useractivity={useractivity} />
+        </div>
+      </div>
+      <Footer />
 
     </>
   )
