@@ -1,4 +1,3 @@
-import { FcBusinesswoman } from "react-icons/fc";
 import { FiEdit3 } from "react-icons/fi";
 
 

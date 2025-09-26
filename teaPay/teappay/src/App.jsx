@@ -13,6 +13,7 @@ import AllWallet from "./components/body/allWallet";
 import Card from "./components/body/cardInfo";
 import CardDetail from "./components/body/cardDetails";
 import CardDetailTwo from "./components/body/cardDetailTwo";
+import QRCode from "./components/body/qrCode";
 
 
 
@@ -65,6 +66,7 @@ function App() {
       <Card />
       <CardDetail />
       <CardDetailTwo />
+      <QRCode />
 
     </>
   )
